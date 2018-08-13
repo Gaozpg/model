@@ -8,4 +8,5 @@ public interface UserDao extends BaseDao<User> {
 
     User findByUserNameAndUserPass(String userName,String userPass);
 
+
 }
