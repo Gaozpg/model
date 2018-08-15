@@ -1,8 +1,7 @@
 package com.gpg.pojo;
 
 import com.gpg.pojo.jdtn.Jurisdiction;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 import javax.persistence.*;
@@ -12,6 +11,9 @@ import java.util.List;
 @Setter
 @Getter
 @Accessors(chain = true)
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class Admin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

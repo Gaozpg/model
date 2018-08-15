@@ -11,6 +11,8 @@ import java.util.List;
 @Setter
 @Getter
 @Accessors(chain = true)
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
 
     @Id

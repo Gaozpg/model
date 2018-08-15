@@ -1,8 +1,7 @@
 package com.gpg.pojo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 import javax.persistence.Entity;
@@ -13,6 +12,9 @@ import java.time.LocalDateTime;
 @Setter
 @Getter
 @Accessors(chain = true)
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class AdminInfo {
     @Id
     private Long adminId;

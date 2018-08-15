@@ -14,8 +14,10 @@ import org.springframework.data.redis.core.SetOperations;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.Arrays;
+import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
 import static java.lang.Thread.sleep;
@@ -47,14 +49,16 @@ public class SsoServerApplicationTests {
     private AdminDao adminDao;
 
     @Test
+    @Transactional
     public  void adminTest(){
 
-        adminDao.save(new Admin()
+       /* adminDao.save(new Admin()
                 .setAdminId(3l)
                 .setWorkNum("w3885")
                 .setAdminName("admin")
                 .setAdminPass("admin")
-                .setAdminType(1).setAdminInfo(new AdminInfo()
+                .setAdminType(1)
+                .setAdminInfo(new AdminInfo().setAdminId(3l)
                         .setEmail("gaozpg@163.com")
                         .setSex(1)
                         .setIdCardNo("340321199402144355")
@@ -62,8 +66,16 @@ public class SsoServerApplicationTests {
                         .setRegisterTime(LocalDateTime.now())
                         .setWorkNum("w3885")
                          )
-                .setJdtList(Arrays.asList(new Jurisdiction().setJdtName("用户管理员").setJdUrls(Arrays.asList(new JdtUrl().setUrl("/admin/adminUser")))))
-        );
+                .setJdtList(Arrays.asList(new Jurisdiction()
+                        .setJdtName("用户管理员").setJdtId(1l)
+                        .setJdUrls(Arrays.asList(new JdtUrl().setUrl("/admin/adminUser").setUrlId(1l)))))
+        );*/
+
+        Admin admin = adminDao.findByAdminId(3l);
+
+        System.out.println(admin);
+
+
     }
 
 }

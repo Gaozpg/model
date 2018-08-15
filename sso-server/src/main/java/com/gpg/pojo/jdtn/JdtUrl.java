@@ -1,7 +1,6 @@
 package com.gpg.pojo.jdtn;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 import javax.persistence.Entity;
@@ -13,6 +12,9 @@ import javax.persistence.Id;
 @Setter
 @Getter
 @Accessors(chain = true)
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class JdtUrl {
 
     @Id
