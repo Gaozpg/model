@@ -1,19 +1,22 @@
 package com.gpg.pojo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity
 @Setter
 @Getter
 @Accessors(chain = true)
-public class UserInfo {
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+public class UserInfo implements Serializable {
     @Id
     private Long userId;
     private Integer sex;

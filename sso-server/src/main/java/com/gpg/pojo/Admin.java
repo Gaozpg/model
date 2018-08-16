@@ -1,19 +1,21 @@
 package com.gpg.pojo;
 
 import com.gpg.pojo.jdtn.Jurisdiction;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 import javax.persistence.*;
-import java.lang.annotation.Inherited;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Setter
 @Getter
 @Accessors(chain = true)
-public class Admin extends Object{
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+public class Admin implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long adminId;
