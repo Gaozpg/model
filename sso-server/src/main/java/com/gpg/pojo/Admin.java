@@ -6,13 +6,14 @@ import lombok.Setter;
 import lombok.experimental.Accessors;
 
 import javax.persistence.*;
+import java.lang.annotation.Inherited;
 import java.util.List;
 
 @Entity
 @Setter
 @Getter
 @Accessors(chain = true)
-public class Admin {
+public class Admin extends Object{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long adminId;
