@@ -5,116 +5,23 @@
     <title>Title</title>
     <div th:replace="main"></div>
 </head>
-
 <style>
-    .testswitch {
-        position: relative;
-        float: left;
-        width: 90px;
-        margin: 0;
-        -webkit-user-select:none;
-        -moz-user-select:none;
-        -ms-user-select: none;
-    }
-
-    .testswitch-checkbox {
-        display: none;
-    }
-
-    .testswitch-label {
-        display: block;
-        overflow: hidden;
-        cursor: pointer;
-        border: 2px solid #999999;
-        border-radius: 20px;
-    }
-
-    .testswitch-inner {
-        display: block;
-        width: 200%;
-        margin-left: -100%;
-        transition: margin 0.3s ease-in 0s;
-    }
-
-    .testswitch-inner::before, .testswitch-inner::after {
-        display: block;
-        float: right;
-        width: 50%;
-        height: 30px;
-        padding: 0;
-        line-height: 30px;
-        font-size: 14px;
-        color: white;
-        font-family:
-                Trebuchet, Arial, sans-serif;
-        font-weight: bold;
-        box-sizing: border-box;
-    }
-
-    .testswitch-inner::after {
-        content: attr(data-on);
-        padding-left: 10px;
-        background-color: #00e500;
-        color: #FFFFFF;
-    }
-
-    .testswitch-inner::before {
-        content: attr(data-off);
-        padding-right: 10px;
-        background-color: #EEEEEE;
-        color: #999999;
-        text-align: right;
-    }
-
-    .testswitch-switch {
-        position: absolute;
-        display: block;
-        width: 22px;
-        height: 22px;
-        margin: 4px;
-        background: #FFFFFF;
-        top: 0;
-        bottom: 0;
-        right: 56px;
-        border: 2px solid #999999;
-        border-radius: 20px;
-        transition: all 0.3s ease-in 0s;
-    }
-
-    .testswitch-checkbox:checked + .testswitch-label .testswitch-inner {
-        margin-left: 0;
-    }
-
-    .testswitch-checkbox:checked + .testswitch-label .testswitch-switch {
-        right: 0px;
+    #body{
+        width: 500px;
+        height: 300px;
+        margin: auto;
+        margin-top: 100px;
     }
 </style>
-
 <body>
 
-     <div class="testswitch">
-    <input class="testswitch-checkbox" id="onoffswitch" type="checkbox">
-    <label class="testswitch-label" for="onoffswitch">
-        <span class="testswitch-inner" data-on="ON" data-off="OFF"></span>
-        <span class="testswitch-switch"></span>
-    </label>
-    </div>
 
 
-    <div class="switch switch-mini">
-        <input type="checkbox" checked />
-    </div>
-
-    <div class="switch" data-on="danger" data-off="primary">
-        <input type="checkbox" checked />
-    </div>
-
-<script>
-
-
-
-</script>
-
+<div id="body">
+    <a class="btn btn-warning" href="/index?urlName=register">注册</a><br/>
+    <a class="btn btn-danger" href="/index?urlName=alogin">管理员登录</a><br/>
+    <a class="btn btn-success" href="/index?urlName=login">用户登录</a>
+</div>
 
 </body>
 </html>
