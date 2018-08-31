@@ -3,9 +3,12 @@ package com.gpg.pojo.jdtn;
 import lombok.*;
 import lombok.experimental.Accessors;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.io.Serializable;
-import java.util.List;
+
 @Entity
 @Setter
 @Getter
@@ -13,12 +16,17 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Jurisdiction implements Serializable {
+/**
+ * 权限所属url
+ */
+public class Url implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long jdtId;
-    private String jdtName;
-    @OneToMany
-    private List<JdtUrl> jdtUrls;
+    private Long urlId;
+    /**url地址*/
+    private String url;
+    /**url备注*/
     private String remarks;
+
 }

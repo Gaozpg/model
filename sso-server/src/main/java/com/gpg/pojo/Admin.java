@@ -1,6 +1,5 @@
 package com.gpg.pojo;
 
-import com.gpg.pojo.jdtn.Jurisdiction;
 import lombok.*;
 import lombok.experimental.Accessors;
 
@@ -22,10 +21,7 @@ public class Admin implements Serializable {
     private String workNum;
     private String adminName;
     private String adminPass;
-    @OneToMany(fetch = FetchType.LAZY)
-    private List<Jurisdiction> jdtList;
-    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
-    private AdminInfo adminInfo;
+    private String email;
+    private String phone;
     private Integer adminType;
 }

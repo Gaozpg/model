@@ -5,6 +5,8 @@ import lombok.*;
 import lombok.experimental.Accessors;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -21,8 +23,6 @@ public class AdminInfo implements Serializable {
     private Long adminId;
     private String workNum;
     private Integer sex;
-    private String phone;
-    private String email;
     private String realName;
     private String idCardNo;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")

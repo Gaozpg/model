@@ -1,6 +1,5 @@
 package com.gpg.pojo;
 
-import com.gpg.pojo.jdtn.Jurisdiction;
 import lombok.*;
 import lombok.experimental.Accessors;
 
@@ -14,6 +13,9 @@ import java.util.List;
 @Accessors(chain = true)
 @AllArgsConstructor
 @NoArgsConstructor
+/**
+ * 用户表
+ */
 public class User implements Serializable {
 
     @Id
@@ -21,10 +23,10 @@ public class User implements Serializable {
     private Long userId;
     private String userName;
     private String userPass;
-    @OneToMany(fetch = FetchType.LAZY)
-    private List<Jurisdiction> jdtList;
-    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
-    private UserInfo userInfo;
+    /**注册邮箱*/
+    private String email;
+    /**手机号*/
+    private String phone;
+    /**用户状态*/
     private Integer userType;
 }
